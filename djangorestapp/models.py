@@ -9,6 +9,6 @@ class Article(models.Model):
     email = models.EmailField()
     date_time = models.DateTimeField(auto_now_add=True)
 
-    def __str(self):
+    def __str__(self):
         return self.title
 
