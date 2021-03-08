@@ -17,6 +17,8 @@ class PersionList(APIView):
         persions_serializer = PersionSerializer(persions,many = True)
         return Response({'persions': persions})
 
+
+
 class PersionCreate(APIView):
     def post(self, request, format=None):
         persions_serializer = PersionSerializer(data=request.data)
@@ -25,17 +27,15 @@ class PersionCreate(APIView):
             return Response(persions_serializer.data, status=status.HTTP_201_CREATED)
         return Response(persions_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
 class PersionUpdate(APIView):
-    
     def get_persion(self, id):
         try:
             return Persion.objects.get(id=id)
         except Persion.DoesNotExist:
             Response(Persion.errors,status=status.HTTP_404_NOT_FOUND)
         
-   
-         
-
     def get(self, request, id, format=None):
         persion = self.get_persion(id)
         persion_serializer = PersionSerializer(persion)
