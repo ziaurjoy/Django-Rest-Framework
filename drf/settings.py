@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     
     # startapp 
     'djangorestapp',
-    'ClassBasedAPI'
+    'ClassBasedAPI',
+    'viewsetcreate',
 
 ]
 
