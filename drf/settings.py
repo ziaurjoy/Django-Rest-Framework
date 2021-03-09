@@ -40,13 +40,23 @@ INSTALLED_APPS = [
 
     # install app
     'rest_framework',
+    'rest_framework.authtoken',
     
     # startapp 
     'djangorestapp',
     'ClassBasedAPI',
     'viewsetcreate',
+    'GenericAPIView',
 
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

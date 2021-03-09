@@ -21,4 +21,5 @@ urlpatterns = [
     path('api/', include('djangorestapp.urls')),
     path('classbased/', include('ClassBasedAPI.urls')),
     path('viewsetcreate/', include('viewsetcreate.urls')),
+    path('genericAPIView/', include('GenericAPIView.urls')),
 ]
